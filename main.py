@@ -1,4 +1,5 @@
 import random
+import string
 import clipboard
 
 
@@ -33,11 +34,11 @@ def get_complexity_password():
 
 def password_generator(n, family):
     """Return a password of nth character"""
-    uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    lowercase = "abcdefghijklmnopqrstuvwxyz"
-    numbers = "0123456789"
-    alphanumeric = uppercase + lowercase + numbers
-    symbols = "@#&(!)-$€%§+=?<>"
+    uppercase = string.ascii_uppercase
+    lowercase = string.ascii_lowercase
+    numbers = string.digits
+    alphanumeric = string.ascii_letters + numbers
+    symbols = string.punctuation
     total = uppercase + lowercase + numbers + symbols
     password = ""
 
